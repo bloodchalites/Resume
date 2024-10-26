@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1703676278 source:c:\users\bloodchalites\code\oglavstructzhigadlo\main.cpp
+	<iostream>
+	<locale>
+	<codecvt>
+	<vector>
+	<windows.h>
+
