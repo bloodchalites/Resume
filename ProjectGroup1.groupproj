@@ -1,0 +1,39 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F50EE5B1-27BE-467E-9DD1-13D215C8C712}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="\\Mac\Home\Documents\Embarcadero\YAIMP\HistoryProject.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HistoryProject.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="HistoryProject">
+        <MSBuild Projects="HistoryProject.cbproj"/>
+    </Target>
+    <Target Name="HistoryProject:Clean">
+        <MSBuild Projects="HistoryProject.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HistoryProject:Make">
+        <MSBuild Projects="HistoryProject.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="HistoryProject;HistoryProject"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="HistoryProject:Clean;HistoryProject:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="HistoryProject:Make;HistoryProject:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
